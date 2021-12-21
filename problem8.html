@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 8</title>
+</head>
+<body>
+    <script>
+        let nb = Math.floor(Math.random() * 100 + 1)
+        console.log(nb)
+
+        let count = 1
+        let lastTrial = 0;
+
+        while(count <= 8){
+            let input = prompt("Enter your a number:")
+
+            if (input == lastTrial){
+                alert("you've entered the same number")
+                continue;
+            }
+            if (input > nb){
+                alert("Too large - trial" + count +"/8")
+            }else if (input < nb){
+                alert("Too small - trial" + count +"/8")
+            }else{//it's = nb
+                alert("you win with " + count + " trials!")
+                break;
+            }
+
+            lastTrial = input
+
+            count ++;
+        }
+
+        if(count == 9){
+            alert("Game Over!")
+        }
+
+
+    </script>
+</body>
+</html>
